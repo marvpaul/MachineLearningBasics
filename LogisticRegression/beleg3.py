@@ -12,8 +12,8 @@ class DataPointGenerator:
         super().__init__()
         x1 = np.random.uniform(3, 10, amount_of_points)
         x2 = np.random.uniform(3, 5, amount_of_points)
-        self.features =  np.concatenate([x1.reshape((-1,1)), x2.reshape((-1, 1))],
-                                        axis=1)
+        self.features = np.concatenate([x1.reshape((-1, 1)), x2.reshape((-1, 1))],
+                                       axis=1)
 
 
 generator = DataPointGenerator(100)
@@ -35,6 +35,7 @@ y_log = logistic_function()(x_log)
 
 plt.plot(x_log, y_log)
 plt.show()
+
 
 # 2) Implementieren Sie die Hypothese als Python Funktion:
 # logistic_hypothesis(theta)
@@ -58,6 +59,7 @@ theta = np.array([1.1, 2.0, -.9])
 h = logistic_hypothesis(theta)
 print(h(np.array([[1, 2], [1, 2]])))
 
+
 # 3) Implementieren Sie den Cross-Entropy-Loss und
 # den Squared-Error-Loss als Python Funktion.
 # Die Pythonfunktion soll dabei eine Funktion zurückgeben:
@@ -71,18 +73,20 @@ def cross_entropy_loss(X, y):
     def loss(theta):
         h = logistic_hypothesis(theta)
         pos_values = -y * np.log(h(X))
-        neg_values = np.log(1-h(X))
+        neg_values = np.log(1 - h(X))
         sum_cross_entr = pos_values - neg_values
         return sum_cross_entr
+
     return loss
 
+
 def squared_error_loss(h, X, y):
-    return 1 / 2 * np.square(h(X)-y)
+    return 1 / 2 * np.square(h(X) - y)
+
+
 loss = cross_entropy_loss(x, h(x))
 print(loss(np.array([100, 10, -100])))
-
 print(cross_entropy_loss(x, h(x))(theta))
-
 
 # 4) Implementieren Sie die Kostenfunktion J als Python Funktion:
 # cost_function(X, y, h, loss)
@@ -95,8 +99,10 @@ print(cross_entropy_loss(x, h(x))(theta))
 def cost_function(X, y, h, loss):
     def costs(theta):
         loss_computed = loss(theta)
-        return 1/len(X) * np.sum(loss_computed)
+        return 1 / len(X) * np.sum(loss_computed)
+
     return costs
+
 
 print("Costs for good theta", cost_function(x, h(x), h, loss)(theta))
 print("Costs for bad theta", cost_function(x, h(x), h, loss)(np.array([100, 10, -100])))
@@ -108,6 +114,36 @@ print("Costs for bad theta", cost_function(x, h(x), h, loss)(np.array([100, 10, 
 # Wenden Sie iterativ die compute_new_theta Funktion an und finden Sie so ein Theta mit niedrigen Kosten.
 # Kapseln Sie dies in eine Funktion:
 # theta = gradient_descent(alpha, theta, nb_iterations, X, y)
+
+def compute_new_theta(x, y, theta, alpha, hypothesis):
+    '''
+    Compute new theta values for multivariate linear regression with gradient descent
+    :param x: features
+    :param y: y values for given feature values
+    :param theta: array with theta values
+    :param alpha: learning rate
+    :return:
+    '''
+    x_temp = np.concatenate((np.ones((x.shape[0], 1)), x), axis=1)
+    return theta - alpha * (1.0 / x_temp.shape[0]) * x_temp.T.dot(hypothesis(x) - y)
+
+
+def gradient_descent(alpha, theta, nb_iterations, x, y):
+    '''
+    Gradient descent for multivariate linear regression
+    :param alpha: learning rate
+    :param theta: array with theta values
+    :param nb_iterations: number of iterations the gradient descent should do
+    :param x: features
+    :param y: y values
+    :return: new computed theta values
+    '''
+    n_theta = theta
+    costs = []
+    for i in range(nb_iterations):
+        n_theta = compute_new_theta(x, y, n_theta, alpha)
+        costs.append(cost_function(x, y)(n_theta))
+    return n_theta
 
 # 6) Zeichen Sie die Entscheidungsebene in den Scatter-Plot der Daten
 # Hinweis: Für diese gilt: theta[0] + theta[1] * x1 + theta[2] * x2 = 0.5
