@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20e39e3a-0eb1-4c1e-9346-377680e751a9" name="Default" comment="" />
+    <list default="true" id="20e39e3a-0eb1-4c1e-9346-377680e751a9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogisticRegression/beleg3.py" beforeDir="false" afterPath="$PROJECT_DIR$/LogisticRegression/beleg3.py" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +16,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/wissensrepr$beleg2.coverage" NAME="beleg2 Coverage Results" MODIFIED="1525173088195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LineareRegression" />
     <SUITE FILE_PATH="coverage/wissensrepr$LinearRegression.coverage" NAME="LinearRegression Coverage Results" MODIFIED="1523952828850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LineareRegression" />
-    <SUITE FILE_PATH="coverage/wissensrepr$beleg3.coverage" NAME="beleg3 Coverage Results" MODIFIED="1526976878466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LogisticRegression" />
+    <SUITE FILE_PATH="coverage/wissensrepr$beleg3.coverage" NAME="beleg3 Coverage Results" MODIFIED="1526994854696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LogisticRegression" />
     <SUITE FILE_PATH="coverage/wissensrepr$test.coverage" NAME="test Coverage Results" MODIFIED="1526662028443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LogisticRegression" />
   </component>
   <component name="FileEditorManager">
@@ -69,8 +72,8 @@
       <file leaf-file-name="beleg3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="194" column="14" lean-forward="true" selection-start-line="194" selection-start-column="14" selection-end-line="194" selection-end-column="14" />
+            <state relative-caret-position="352">
+              <caret line="227" column="19" lean-forward="true" selection-start-line="227" selection-start-column="19" selection-end-line="227" selection-end-column="19" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -102,8 +105,8 @@
       <file leaf-file-name="beleg2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LineareRegression/beleg2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2190">
-              <caret line="146" column="29" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
+            <state relative-caret-position="368">
+              <caret line="164" column="65" lean-forward="true" selection-start-line="164" selection-start-column="65" selection-end-line="164" selection-end-column="65" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -138,8 +141,8 @@
         <option value="$PROJECT_DIR$/LineareRegression/DataPointGenerator.py" />
         <option value="$PROJECT_DIR$/LineareRegression/beleg2.py" />
         <option value="$PROJECT_DIR$/LogisticRegression/test.py" />
-        <option value="$PROJECT_DIR$/LogisticRegression/beleg3.py" />
         <option value="$PROJECT_DIR$/LineareRegression/beleg2.ipynb" />
+        <option value="$PROJECT_DIR$/LogisticRegression/beleg3.py" />
       </list>
     </option>
   </component>
@@ -165,6 +168,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,8 +197,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,14 +403,16 @@
       <workItem from="1526652413130" duration="7876000" />
       <workItem from="1526918048989" duration="51000" />
       <workItem from="1526975686851" duration="159000" />
+      <workItem from="1526991460133" duration="3272000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52197000" />
+    <option name="totallyTimeSpent" value="56077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -415,54 +420,31 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="11" sideWeight="0.04587156" side_tool="true" visible="true" weight="0.32967034" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32820514" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32820514" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32923076" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15750916" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="SciView" order="10" sideWeight="0.95412844" visible="true" weight="0.32967034" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.36205128" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15750916" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="right" id="SciView" order="10" sideWeight="0.95589745" visible="true" weight="0.32967034" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.36205128" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="11" sideWeight="0.044102564" side_tool="true" visible="true" weight="0.32967034" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32820514" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32923076" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15934066" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info active="true" anchor="right" id="SciView" order="10" sideWeight="0.95337623" visible="true" weight="0.32967034" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36205128" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="11" sideWeight="0.046623792" side_tool="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="7" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,6 +455,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/LogisticRegression/beleg3.py</url>
+          <line>248</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -480,53 +469,53 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="37" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>(np.dot((h(x) - y), x)).sum()</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>(h(x) - y).t * x</expression-string>
+        <expression-string>y_pred.shape</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>(h(x) - y)</expression-string>
+        <expression-string>y.shape</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>(h(x) - y) * x</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>(((h(x) - y) * x)).sum()</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.exp(np.array(-np.logaddexp(0, -3), dtype=np.float128))</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.exp(np.array(-np.logaddexp(0, -30), dtype=np.float128))</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>-np.logaddexp(0, -30)</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.exp(-np.logaddexp(0, -30))</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -885,16 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LineareRegression/beleg2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
-          <caret line="146" column="29" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/numeric.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2610">
@@ -912,20 +891,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="194" column="14" lean-forward="true" selection-start-line="194" selection-start-column="14" selection-end-line="194" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LineareRegression/beleg2.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LineareRegression/beleg2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="164" column="65" lean-forward="true" selection-start-line="164" selection-start-column="65" selection-end-line="164" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="227" column="19" lean-forward="true" selection-start-line="227" selection-start-column="19" selection-end-line="227" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

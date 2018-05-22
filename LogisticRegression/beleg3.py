@@ -28,6 +28,8 @@ m1 = 1000
 r1 = np.random.multivariate_normal(mean1, cov1, m1)
 
 x = np.concatenate((r0,r1))
+y = np.zeros(len(r0)+len(r1))
+y[:len(r0),] = 1
 
 '''
 class DataPointGenerator:
@@ -73,6 +75,7 @@ def logistic_function():
 x_log = np.arange(-5, 5, 0.1)
 y_log = logistic_function()(x_log)
 
+
 plt.plot(x_log, y_log)
 plt.show()
 
@@ -97,8 +100,8 @@ def logistic_hypothesis(theta):
 
 theta = np.array([1.1, 2.0, -0.9])
 h = logistic_hypothesis(theta)
-y = h(x)
-y = np.around(y)
+#y = h(x)
+#y = np.around(y)
 print("Logistic function for: [1, 2]:", h(np.array([[1, 2]])))
 
 
@@ -202,8 +205,37 @@ def gradient_descent(alpha, theta_, nb_iterations, x, y):
     plt.show()
     return n_theta
 
-new_theta = gradient_descent(0.03, np.array([1, 1, -2]), 5000, x, y)
+new_theta = gradient_descent(0.01, np.array([-1, -2, -3]), 1000, x, y)
 print(new_theta)
+
 
 # 6) Zeichen Sie die Entscheidungsebene in den Scatter-Plot der Daten
 # Hinweis: Für diese gilt: theta[0] + theta[1] * x1 + theta[2] * x2 = 0.5
+
+def decision_boundary(theta):
+    x1_range = np.arange(-10, 10, 0.01)
+    x2_range = np.arange(-10, 10, 0.01)
+    x1_range, x2_range = np.meshgrid(x1_range, x2_range)
+    plt.scatter(r0[...,0], r0[...,1], c='b', marker='o', label="Klasse 0")
+    plt.scatter(r1[...,0], r1[...,1], c='r', marker='x', label="Klasse 1")
+    plt.xlabel("x0")
+    plt.ylabel("x1")
+
+    z = np.around(logistic_function()(theta[0] + theta[1] * x1_range + theta[2] * x2_range))
+    plt.contour(x1_range, x2_range, z)
+    plt.show()
+decision_boundary(new_theta)
+
+# 7) Berechnen Sie den Klassifikationsfehler, d.h. der Anteil
+# der falsch-klassifizierten Datensätze:
+# Klassifikationsfehler = Anzahl der falsch-klassifizierten Datensätze / Anzahl der Datensätze
+
+h_pred = logistic_hypothesis(new_theta)
+y_pred = h_pred(x)
+y_pred = np.around(y_pred)
+false_classifications = 0
+for i in range(y.size):
+    if(y_pred[i] != y[i]):
+        false_classifications += 1
+
+print("False classifications: ", false_classifications)
