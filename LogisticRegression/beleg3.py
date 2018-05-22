@@ -1,23 +1,63 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from math import exp
+from numpy import ma
+from scipy.special._ufuncs import xlogy
+import scipy
+from scipy.stats import logistic
+import numpy as np
+import matplotlib.pyplot as plt
 
+# class 0:
+# covariance matrix and mean
 
+cov0 = np.array([[5,-3],[-3,3]])
+
+mean0 = np.array([2.,3])
+
+# number of data points
+m0 = 1000
+# generate m0 gaussian distributed data points with
+# mean0 and cov0.
+r0 = np.random.multivariate_normal(mean0, cov0, m0)
+
+# covariance matrix
+cov1 = np.array([[5,-3],[-3,3]])
+mean1 = np.array([1.,1])
+m1 = 1000
+r1 = np.random.multivariate_normal(mean1, cov1, m1)
+
+x = np.concatenate((r0,r1))
+
+'''
 class DataPointGenerator:
-    '''
-    Data generator which computes new random data points for 2 features
-    '''
     features = None
 
     def __init__(self, amount_of_points) -> None:
         super().__init__()
-        x1 = np.random.uniform(3, 10, amount_of_points)
-        x2 = np.random.uniform(3, 5, amount_of_points)
+        x1 = np.random.uniform(0, 100, amount_of_points)
+        x2 = np.random.uniform(1, 20, amount_of_points)
         self.features = np.concatenate([x1.reshape((-1, 1)), x2.reshape((-1, 1))],
                                        axis=1)
 
 
 generator = DataPointGenerator(100)
 x = generator.features
+
+'''
+#Feature scaling
+def scalingFeature(feature):
+    '''
+    Scaling a given features to -1 to 1
+    :param feature: given features
+    :return: scaled features
+    '''
+    u = np.sum(feature) / feature.size
+    std = np.sqrt(np.abs(np.square(u) - np.square(feature)))
+    return (feature - u) / std
+#x[:, 0] = scalingFeature(x[:, 0])
+#x[:, 1] = scalingFeature(x[:, 1])
+
 
 
 # 1) Erstellen Sie eine Pythonfunktion die, die
@@ -55,9 +95,11 @@ def logistic_hypothesis(theta):
     return h
 
 
-theta = np.array([1.1, 2.0, -.9])
+theta = np.array([1.1, 2.0, -0.9])
 h = logistic_hypothesis(theta)
-print(h(np.array([[1, 2], [1, 2]])))
+y = h(x)
+y = np.around(y)
+print("Logistic function for: [1, 2]:", h(np.array([[1, 2]])))
 
 
 # 3) Implementieren Sie den Cross-Entropy-Loss und
@@ -72,11 +114,20 @@ print(h(np.array([[1, 2], [1, 2]])))
 def cross_entropy_loss(X, y):
     def loss(theta):
         h = logistic_hypothesis(theta)
-        pos_values = -y * np.log(h(X))
-        neg_values = np.log(1 - h(X))
-        sum_cross_entr = pos_values - neg_values
-        return sum_cross_entr
+        #pos_values = -y * np.log(h(X))
+        '''m = 1.0 - h(X)
+        neg_values_log = ma.log(m)
+        #neg_values = m
+        neg_values_log.filled(0)
 
+        neg_values = (1.0-y) * neg_values_log
+
+        sum_cross_entr = pos_values - neg_values'''
+        x_temp = np.concatenate((np.ones((x.shape[0], 1)), x), axis=1).dot(theta)
+        #h(X) gibt 1 zurück, das ist ein Problem. IN h(x) Funktion kommt aber keine 1 raus
+        return -y*np.log(h(X)) - (1 - y)*np.log(1 - h(X))
+
+        #return sum_cross_entr
     return loss
 
 
@@ -84,9 +135,7 @@ def squared_error_loss(h, X, y):
     return 1 / 2 * np.square(h(X) - y)
 
 
-loss = cross_entropy_loss(x, h(x))
-print(loss(np.array([100, 10, -100])))
-print(cross_entropy_loss(x, h(x))(theta))
+loss = cross_entropy_loss(x, y)
 
 # 4) Implementieren Sie die Kostenfunktion J als Python Funktion:
 # cost_function(X, y, h, loss)
@@ -99,13 +148,14 @@ print(cross_entropy_loss(x, h(x))(theta))
 def cost_function(X, y, h, loss):
     def costs(theta):
         loss_computed = loss(theta)
-        return 1 / len(X) * np.sum(loss_computed)
+        return 1. / len(X) * np.sum(loss_computed)
 
     return costs
 
 
-print("Costs for good theta", cost_function(x, h(x), h, loss)(theta))
-print("Costs for bad theta", cost_function(x, h(x), h, loss)(np.array([100, 10, -100])))
+print("Costs for good theta", cost_function(x, y, h, loss)(theta))
+
+print("Costs for bad theta", cost_function(x, y, h, loss)(np.array([3, 2, -1])))
 
 # 5) Implementieren Sie das Gradientenabstiegsverfahren unter Benutzung der Kostenfunktion und der Hypothese.
 # 5a) Schreiben Sie eine Funktion die die Update Rules anwendet zur Berechnung der neuen theta-Werte:
@@ -115,7 +165,7 @@ print("Costs for bad theta", cost_function(x, h(x), h, loss)(np.array([100, 10, 
 # Kapseln Sie dies in eine Funktion:
 # theta = gradient_descent(alpha, theta, nb_iterations, X, y)
 
-def compute_new_theta(x, y, theta, alpha, hypothesis):
+def compute_new_theta(x, y, theta, alpha):
     '''
     Compute new theta values for multivariate linear regression with gradient descent
     :param x: features
@@ -124,26 +174,36 @@ def compute_new_theta(x, y, theta, alpha, hypothesis):
     :param alpha: learning rate
     :return:
     '''
+    hypothesis = logistic_hypothesis(theta)
+    m = len(y)
     x_temp = np.concatenate((np.ones((x.shape[0], 1)), x), axis=1)
-    return theta - alpha * (1.0 / x_temp.shape[0]) * x_temp.T.dot(hypothesis(x) - y)
+    change = hypothesis(x)-y
+    return theta - ((alpha / m) * np.sum(np.dot(change, x_temp)))
 
 
-def gradient_descent(alpha, theta, nb_iterations, x, y):
+def gradient_descent(alpha, theta_, nb_iterations, x, y):
     '''
     Gradient descent for multivariate linear regression
     :param alpha: learning rate
-    :param theta: array with theta values
+    :param theta_: array with theta values
     :param nb_iterations: number of iterations the gradient descent should do
     :param x: features
     :param y: y values
     :return: new computed theta values
     '''
-    n_theta = theta
+    n_theta = theta_
     costs = []
     for i in range(nb_iterations):
         n_theta = compute_new_theta(x, y, n_theta, alpha)
-        costs.append(cost_function(x, y)(n_theta))
+
+        costs.append(cost_function(x, y, logistic_hypothesis(n_theta), cross_entropy_loss(x, y))(n_theta))
+    print(costs)
+    plt.plot(np.arange(0, nb_iterations), costs)
+    plt.show()
     return n_theta
+
+new_theta = gradient_descent(0.03, np.array([1, 1, -2]), 5000, x, y)
+print(new_theta)
 
 # 6) Zeichen Sie die Entscheidungsebene in den Scatter-Plot der Daten
 # Hinweis: Für diese gilt: theta[0] + theta[1] * x1 + theta[2] * x2 = 0.5
