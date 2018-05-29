@@ -1,13 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from math import exp
-from numpy import ma
-from scipy.special._ufuncs import xlogy
-import scipy
-from scipy.stats import logistic
-import numpy as np
-import matplotlib.pyplot as plt
 
+'''
+Generate some data 
+'''
 # class 0:
 # covariance matrix and mean
 
@@ -31,37 +27,6 @@ x = np.concatenate((r0,r1))
 y = np.zeros(len(r0)+len(r1))
 y[:len(r0),] = 1
 
-'''
-class DataPointGenerator:
-    features = None
-
-    def __init__(self, amount_of_points) -> None:
-        super().__init__()
-        x1 = np.random.uniform(0, 100, amount_of_points)
-        x2 = np.random.uniform(1, 20, amount_of_points)
-        self.features = np.concatenate([x1.reshape((-1, 1)), x2.reshape((-1, 1))],
-                                       axis=1)
-
-
-generator = DataPointGenerator(100)
-x = generator.features
-
-'''
-#Feature scaling
-def scalingFeature(feature):
-    '''
-    Scaling a given features to -1 to 1
-    :param feature: given features
-    :return: scaled features
-    '''
-    u = np.sum(feature) / feature.size
-    std = np.sqrt(np.abs(np.square(u) - np.square(feature)))
-    return (feature - u) / std
-#x[:, 0] = scalingFeature(x[:, 0])
-#x[:, 1] = scalingFeature(x[:, 1])
-
-
-
 # 1) Erstellen Sie eine Pythonfunktion die, die
 # logistische Funktion berechnet.
 # Stellen Sie diese im Bereich [-5, 5] graphisch dar.
@@ -79,6 +44,7 @@ y_log = logistic_function()(x_log)
 plt.plot(x_log, y_log)
 plt.show()
 #-----------OKAY ----------------
+
 
 # 2) Implementieren Sie die Hypothese als Python Funktion:
 # logistic_hypothesis(theta)
@@ -100,10 +66,7 @@ def logistic_hypothesis(theta):
 
 theta = np.array([1.1, 2.0, -0.9])
 h = logistic_hypothesis(theta)
-#y = h(x)
-#y = np.around(y)
 print("Logistic function for: [1, 2]:", h(np.array([[1, 2]])))
-
 
 # 3) Implementieren Sie den Cross-Entropy-Loss und
 # den Squared-Error-Loss als Python Funktion.
@@ -126,6 +89,7 @@ def squared_error_loss(h, X, y):
 
 
 loss = cross_entropy_loss(x, y)
+
 
 # 4) Implementieren Sie die Kostenfunktion J als Python Funktion:
 # cost_function(X, y, h, loss)
@@ -168,7 +132,7 @@ def compute_new_theta(x, y, theta, alpha):
     m = len(y)
     x_temp = np.concatenate((np.ones((x.shape[0], 1)), x), axis=1)
     change = hypothesis(x)-y
-    return theta - ((alpha / m) * np.sum(np.dot(change, x_temp)))
+    return theta - ((alpha / m) * np.dot(change, x_temp))
 
 
 def gradient_descent(alpha, theta_, nb_iterations, x, y):
@@ -192,7 +156,7 @@ def gradient_descent(alpha, theta_, nb_iterations, x, y):
     plt.show()
     return n_theta
 
-new_theta = gradient_descent(0.4, np.array([-3, 0, 0]), 1000, x, y)
+new_theta = gradient_descent(0.1, np.array([-1, -2, 2]), 1000, x, y)
 print(new_theta)
 
 
