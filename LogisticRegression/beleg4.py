@@ -45,9 +45,9 @@ print(get_h1([[-2, -4], [0, 1]])[0](-1))
 print(get_h0([[-2, 0], [0, 2]])(np.array(10)))
 
 #Get some training data
-rand_values = np.random.rand(100*10000)*2*np.pi
+rand_values = np.random.rand(1000*10000)*2*np.pi
 fun_values = target_fun(rand_values)
-twenty_train_for_each = np.array((rand_values, fun_values)).transpose().reshape((10000, 100, 2))
+twenty_train_for_each = np.array((rand_values, fun_values)).transpose().reshape((10000, 1000, 2))
 
 h1 = get_h1([[-2, -4], [0, 1]])
 
@@ -92,9 +92,6 @@ average_h0_hypthesis = average_h0_hypthesis/len(hypothesis_h0)
 print("========Hypothesis 0==========")
 print("theta0 -->", average_h0_hypthesis)
 
-
-
-
 average_theta0 = 0
 average_theta1 = 0
 for hypothessis in hypothesis_h1:
@@ -108,3 +105,51 @@ print("theta0 -->", average_theta0)
 print("theta1 -->", average_theta1)
 
 plot_hypothesis(linear_hypothesis_h0(average_h0_hypthesis), linear_hypothesis_h1(average_theta0, average_theta1))
+e_out_h0_average = get_loss(linear_hypothesis_h0(average_h0_hypthesis), twenty_train_for_each[1])
+
+x_vals = np.arange(0, 2*np.pi, 0.1)
+y_vals_h0 = linear_hypothesis_h0(average_h0_hypthesis)(x_vals)
+y_vals_sin = target_fun(x_vals)
+
+bias_h1 = np.mean(np.square(linear_hypothesis_h1(average_theta0, average_theta1)(x_vals) - y_vals_sin))
+bias_h0 = np.mean(np.square(linear_hypothesis_h0(average_h0_hypthesis)(x_vals) - y_vals_sin))
+
+print(bias_h0)
+print(bias_h1)
+means_hd0 = np.empty(shape=(len(hypothesis_h0), 1))
+means_hd1 = np.empty(shape=(len(hypothesis_h0), 1))
+for i in range(len(hypothesis_h0)):
+    means_hd1[i] = np.mean(np.square(hypothesis_h1[i][0](x_vals) - linear_hypothesis_h1(average_theta0, average_theta1)(x_vals)))
+    means_hd0[i] = np.mean(np.square(hypothesis_h0[i](x_vals) - linear_hypothesis_h0(average_h0_hypthesis)(x_vals)))
+
+var_h0 = np.mean(means_hd0)
+var_h1 = np.mean(means_hd1)
+print(var_h0)
+print(var_h1)
+
+
+
+'''
+e_out_h0_new = 0
+for hypothessis_ in hypothesis_h0:
+    e_out_h0_new += 1/len(hypothesis_h0) * get_loss(hypothessis_, twenty_train_for_each[0])
+print(e_out_h0_new)
+var_h0 = 0
+for hypothessis in hypothesis_h0:
+    var_h0 += 1/len(x_vals) * np.sum(np.square(hypothessis(x_vals) - linear_hypothesis_h0(average_h0_hypthesis)(x_vals)))
+var_h0 /= len(hypothesis_h0)
+bias_h0 = np.sum(np.square(linear_hypothesis_h0(average_h0_hypthesis)(x_vals), y_vals_sin))
+
+print("========Hypothesis 0==========")
+print(e_out_h0_average)
+print("bias:", bias_h0, ", var:", var_h0)
+
+e_out_h1_average = get_loss(linear_hypothesis_h1(average_theta0, average_theta1), twenty_train_for_each[1])
+y_vals_h1 = linear_hypothesis_h1(average_theta0, average_theta1)(x_vals)
+bias_h1 = np.sum(np.abs(y_vals_h1 - y_vals_sin)) / x_vals.shape[0]
+var_h1 = e_out_h1_average - bias_h1 * bias_h1
+print("========Hypothesis 1==========")
+print("bias:", bias_h1, ", var:", var_h1)
+print(e_out_h1_average)
+
+'''
