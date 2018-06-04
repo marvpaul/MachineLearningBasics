@@ -24,7 +24,7 @@ def get_loss(hypothesis, samples):
 
 #Hypothesenmenge H_0: h = theta_0
 def get_h0(samples):
-   return linear_hypothesis_h0(samples[0][1] + samples[1][1] / 2)
+   return linear_hypothesis_h0((samples[0][1] + samples[1][1]) / 2)
 
 #Hypothesenmenge H_1: h = theta_0 + theta_1 * x
 def get_h1(samples):
@@ -60,10 +60,10 @@ for two_samples in two_samples_for_each:
 
 #This is a test loss, it should be zero because the data are exaclty fitting the hypothesis
 sample_vals = np.array([[-1, h1[0](-1)], [-2, h1[0](-2)]])
-print(get_loss(h1[0], sample_vals))
+print("Loss of points which are part of hypothesis: ", get_loss(h1[0], sample_vals))
 
 #Another loss which shouldn't be 0
-print(get_loss(h1[0], twenty_train_for_each[1]))
+print("Loss for some random points: ", get_loss(h1[0], twenty_train_for_each[1]))
 
 e_out_h0 = np.zeros(10000)
 e_out_h1 = np.zeros(10000)
@@ -114,8 +114,8 @@ y_vals_sin = target_fun(x_vals)
 bias_h1 = np.mean(np.square(linear_hypothesis_h1(average_theta0, average_theta1)(x_vals) - y_vals_sin))
 bias_h0 = np.mean(np.square(linear_hypothesis_h0(average_h0_hypthesis)(x_vals) - y_vals_sin))
 
-print(bias_h0)
-print(bias_h1)
+print("Bias h0: ", bias_h0)
+print("Bias h1: ", bias_h1)
 means_hd0 = np.empty(shape=(len(hypothesis_h0), 1))
 means_hd1 = np.empty(shape=(len(hypothesis_h0), 1))
 for i in range(len(hypothesis_h0)):
@@ -124,8 +124,8 @@ for i in range(len(hypothesis_h0)):
 
 var_h0 = np.mean(means_hd0)
 var_h1 = np.mean(means_hd1)
-print(var_h0)
-print(var_h1)
+print("Variance h0: ", var_h0)
+print("Variance h1: ", var_h1)
 
 
 
