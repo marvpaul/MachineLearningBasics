@@ -126,30 +126,3 @@ var_h0 = np.mean(means_hd0)
 var_h1 = np.mean(means_hd1)
 print("Variance h0: ", var_h0)
 print("Variance h1: ", var_h1)
-
-
-
-'''
-e_out_h0_new = 0
-for hypothessis_ in hypothesis_h0:
-    e_out_h0_new += 1/len(hypothesis_h0) * get_loss(hypothessis_, twenty_train_for_each[0])
-print(e_out_h0_new)
-var_h0 = 0
-for hypothessis in hypothesis_h0:
-    var_h0 += 1/len(x_vals) * np.sum(np.square(hypothessis(x_vals) - linear_hypothesis_h0(average_h0_hypthesis)(x_vals)))
-var_h0 /= len(hypothesis_h0)
-bias_h0 = np.sum(np.square(linear_hypothesis_h0(average_h0_hypthesis)(x_vals), y_vals_sin))
-
-print("========Hypothesis 0==========")
-print(e_out_h0_average)
-print("bias:", bias_h0, ", var:", var_h0)
-
-e_out_h1_average = get_loss(linear_hypothesis_h1(average_theta0, average_theta1), twenty_train_for_each[1])
-y_vals_h1 = linear_hypothesis_h1(average_theta0, average_theta1)(x_vals)
-bias_h1 = np.sum(np.abs(y_vals_h1 - y_vals_sin)) / x_vals.shape[0]
-var_h1 = e_out_h1_average - bias_h1 * bias_h1
-print("========Hypothesis 1==========")
-print("bias:", bias_h1, ", var:", var_h1)
-print(e_out_h1_average)
-
-'''
