@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20e39e3a-0eb1-4c1e-9346-377680e751a9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogisticRegression/beleg4.py" beforeDir="false" afterPath="$PROJECT_DIR$/LogisticRegression/beleg4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogisticRegression/beleg3minimal.py" beforeDir="false" afterPath="$PROJECT_DIR$/LogisticRegression/beleg3minimal.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="beleg4.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg4.py">
+      <file leaf-file-name="beleg4.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BiasVariance/beleg4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+            <state relative-caret-position="1074">
+              <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -49,6 +50,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beleg3minimal.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3minimal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="156" column="62" selection-start-line="156" selection-start-column="62" selection-end-line="156" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -83,8 +93,8 @@
         <option value="$PROJECT_DIR$/LineareRegression/beleg2.ipynb" />
         <option value="$PROJECT_DIR$/LogisticRegression/beleg3.py" />
         <option value="$PROJECT_DIR$/LineareRegression/beleg3minimal.py" />
-        <option value="$PROJECT_DIR$/LogisticRegression/beleg3minimal.py" />
         <option value="$PROJECT_DIR$/LogisticRegression/beleg4.py" />
+        <option value="$PROJECT_DIR$/LogisticRegression/beleg3minimal.py" />
       </list>
     </option>
   </component>
@@ -110,9 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,20 +138,18 @@
               <item name="wissensrepr" type="462c0819:PsiDirectoryNode" />
               <item name="LogisticRegression" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="wissensrepr" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wissensrepr" type="462c0819:PsiDirectoryNode" />
-              <item name="nptut" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/marvinkruger/wissensrepr/LineareRegression/LinearRegression.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -152,6 +158,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BiasVariance" />
       <recent name="$PROJECT_DIR$/LogisticRegression" />
       <recent name="$PROJECT_DIR$/LineareRegression" />
     </key>
@@ -261,7 +268,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LogisticRegression/beleg4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BiasVariance/beleg4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -354,12 +361,13 @@
       <workItem from="1527928904772" duration="4253000" />
       <workItem from="1528015454270" duration="6738000" />
       <workItem from="1528028956352" duration="2066000" />
-      <workItem from="1528117626072" duration="1102000" />
+      <workItem from="1528117626072" duration="1497000" />
+      <workItem from="1528438457272" duration="337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75688000" />
+    <option name="totallyTimeSpent" value="76420000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -382,20 +390,20 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32820514" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32820514" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.29435897" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29435897" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17216118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17399268" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info active="true" anchor="right" id="SciView" order="10" sideWeight="0.95337623" visible="true" weight="0.32967034" />
+      <window_info anchor="right" id="SciView" order="10" sideWeight="0.95337623" visible="true" weight="0.32967034" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.36205128" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -527,7 +535,38 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg4.py">
+    <entry file="file://$PROJECT_DIR$/BiasVariance/beleg4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/matplotlib/axes/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3630">
+          <caret line="242" selection-start-line="242" selection-end-line="242" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3minimal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiasVariance/beleg4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1830">
           <caret line="122" column="60" selection-start-line="122" selection-start-column="54" selection-end-line="122" selection-end-column="60" />
@@ -551,7 +590,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg4.py">
+    <entry file="file://$PROJECT_DIR$/BiasVariance/beleg4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
           <caret line="136" column="3" selection-start-line="136" selection-start-column="3" selection-end-line="136" selection-end-column="3" />
@@ -575,7 +614,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg4.py">
+    <entry file="file://$PROJECT_DIR$/BiasVariance/beleg4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1635">
           <caret line="109" column="111" selection-start-line="109" selection-start-column="111" selection-end-line="109" selection-end-column="111" />
@@ -620,31 +659,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3minimal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="51" lean-forward="true" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/matplotlib/contour.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17685">
           <caret line="1179" selection-start-line="1179" selection-end-line="1179" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogisticRegression/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="90" column="42" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -655,13 +673,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg4.py">
+    <entry file="file://$PROJECT_DIR$/LogisticRegression/test.py" />
+    <entry file="file://$PROJECT_DIR$/BiasVariance/beleg4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+        <state relative-caret-position="1074">
+          <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticRegression/beleg3minimal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="156" column="62" selection-start-line="156" selection-start-column="62" selection-end-line="156" selection-end-column="62" />
         </state>
       </provider>
     </entry>

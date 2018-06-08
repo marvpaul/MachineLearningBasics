@@ -107,6 +107,13 @@ def cost_function(X, y, h, loss):
     return costs
 
 
+def cost_function_lam_reg(X, y, h, loss):
+    def costs(theta, alpha):
+        loss_computed = loss(theta)
+        return 1. / len(X) * np.sum(loss_computed) + alpha * np.sum(np.square(theta))
+
+    return costs
+
 print("Costs for good theta", cost_function(x, y, h, loss)(theta))
 
 print("Costs for bad theta", cost_function(x, y, h, loss)(np.array([1.4, 0.44, -0.55])))
@@ -134,6 +141,21 @@ def compute_new_theta(x, y, theta, alpha):
     change = hypothesis(x)-y
     return theta - ((alpha / m) * np.dot(change, x_temp))
 
+def compute_new_theta_lam_reg(x, y, theta, alpha, alpha_reg):
+    '''
+    Compute new theta values for multivariate linear regression with gradient descent
+    :param x: features
+    :param y: y values for given feature values
+    :param theta: array with theta values
+    :param alpha: learning rate
+    :return:
+    '''
+    hypothesis = logistic_hypothesis(theta)
+    m = len(y)
+    x_temp = np.concatenate((np.ones((x.shape[0], 1)), x), axis=1)
+    change = hypothesis(x)-y
+    return theta - ((alpha / m) * np.dot(change, x_temp + 2 * alpha_reg/m * theta))
+
 
 def gradient_descent(alpha, theta_, nb_iterations, x, y):
     '''
@@ -149,6 +171,27 @@ def gradient_descent(alpha, theta_, nb_iterations, x, y):
     costs = []
     for i in range(nb_iterations):
         n_theta = compute_new_theta(x, y, n_theta, alpha)
+
+        costs.append(cost_function(x, y, logistic_hypothesis(n_theta), cross_entropy_loss(x, y))(n_theta))
+    print(costs)
+    plt.plot(np.arange(0, nb_iterations), costs)
+    plt.show()
+    return n_theta
+
+def gradient_descent_lam_reg(alpha_learningrate, theta_, nb_iterations, x, y, alpha_lam_reg):
+    '''
+    Gradient descent for multivariate linear regression
+    :param alpha: learning rate
+    :param theta_: array with theta values
+    :param nb_iterations: number of iterations the gradient descent should do
+    :param x: features
+    :param y: y values
+    :return: new computed theta values
+    '''
+    n_theta = theta_
+    costs = []
+    for i in range(nb_iterations):
+        n_theta = compute_new_theta(x, y, n_theta, alpha_learningrate, alpha_lam_reg)
 
         costs.append(cost_function(x, y, logistic_hypothesis(n_theta), cross_entropy_loss(x, y))(n_theta))
     print(costs)
