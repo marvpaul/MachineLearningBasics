@@ -7,9 +7,9 @@ Generate some data
 # class 0:
 # covariance matrix and mean
 
-cov0 = np.array([[5,-3],[-3,3]])
+cov0 = np.array([[5, -3], [-3, 3]])
 
-mean0 = np.array([2.,3])
+mean0 = np.array([2., 3])
 
 # number of data points
 m0 = 1000
@@ -18,14 +18,15 @@ m0 = 1000
 r0 = np.random.multivariate_normal(mean0, cov0, m0)
 
 # covariance matrix
-cov1 = np.array([[5,-3],[-3,3]])
-mean1 = np.array([1.,1])
+cov1 = np.array([[5, -3], [-3, 3]])
+mean1 = np.array([1., 1])
 m1 = 1000
 r1 = np.random.multivariate_normal(mean1, cov1, m1)
 
-x = np.concatenate((r0,r1))
-y = np.zeros(len(r0)+len(r1))
-y[:len(r0),] = 1
+x = np.concatenate((r0, r1))
+y = np.zeros(len(r0) + len(r1))
+y[:len(r0), ] = 1
+
 
 # 1) Erstellen Sie eine Pythonfunktion die, die
 # logistische Funktion berechnet.
@@ -35,15 +36,18 @@ def logistic_function():
         return 1 / (1 + np.exp(-x))
 
     return h
-#-----------OKAY ----------------
+
+
+# -----------OKAY ----------------
 
 x_log = np.arange(-5, 5, 0.1)
 y_log = logistic_function()(x_log)
 
-
 plt.plot(x_log, y_log)
 plt.show()
-#-----------OKAY ----------------
+
+
+# -----------OKAY ----------------
 
 
 # 2) Implementieren Sie die Hypothese als Python Funktion:
@@ -68,6 +72,7 @@ theta = np.array([1.1, 2.0, -0.9])
 h = logistic_hypothesis(theta)
 print("Logistic function for: [1, 2]:", h(np.array([[1, 2]])))
 
+
 # 3) Implementieren Sie den Cross-Entropy-Loss und
 # den Squared-Error-Loss als Python Funktion.
 # Die Pythonfunktion soll dabei eine Funktion zurückgeben:
@@ -80,7 +85,8 @@ print("Logistic function for: [1, 2]:", h(np.array([[1, 2]])))
 def cross_entropy_loss(X, y):
     def loss(theta):
         h = logistic_hypothesis(theta)
-        return -y*np.log(h(X)) - (1 - y)*np.log(1 - h(X))
+        return -y * np.log(h(X)) - (1 - y) * np.log(1 - h(X))
+
     return loss
 
 
@@ -114,9 +120,11 @@ def cost_function_lam_reg(X, y, h, loss):
 
     return costs
 
+
 print("Costs for good theta", cost_function(x, y, h, loss)(theta))
 
 print("Costs for bad theta", cost_function(x, y, h, loss)(np.array([1.4, 0.44, -0.55])))
+
 
 # 5) Implementieren Sie das Gradientenabstiegsverfahren unter Benutzung der Kostenfunktion und der Hypothese.
 # 5a) Schreiben Sie eine Funktion die die Update Rules anwendet zur Berechnung der neuen theta-Werte:
@@ -138,8 +146,9 @@ def compute_new_theta(x, y, theta, alpha):
     hypothesis = logistic_hypothesis(theta)
     m = len(y)
     x_temp = np.concatenate((np.ones((x.shape[0], 1)), x), axis=1)
-    change = hypothesis(x)-y
+    change = hypothesis(x) - y
     return theta - ((alpha / m) * np.dot(change, x_temp))
+
 
 def compute_new_theta_lam_reg(x, y, theta, alpha, alpha_reg):
     '''
@@ -153,8 +162,8 @@ def compute_new_theta_lam_reg(x, y, theta, alpha, alpha_reg):
     hypothesis = logistic_hypothesis(theta)
     m = len(y)
     x_temp = np.concatenate((np.ones((x.shape[0], 1)), x), axis=1)
-    change = hypothesis(x)-y
-    return theta - ((alpha / m) * np.dot(change, x_temp + 2 * alpha_reg/m * theta))
+    change = hypothesis(x) - y
+    return theta - ((alpha / m) * np.dot(change, x_temp + 2 * alpha_reg / m * theta))
 
 
 def gradient_descent(alpha, theta_, nb_iterations, x, y):
@@ -178,6 +187,7 @@ def gradient_descent(alpha, theta_, nb_iterations, x, y):
     plt.show()
     return n_theta
 
+
 def gradient_descent_lam_reg(alpha_learningrate, theta_, nb_iterations, x, y, alpha_lam_reg):
     '''
     Gradient descent for multivariate linear regression
@@ -191,7 +201,7 @@ def gradient_descent_lam_reg(alpha_learningrate, theta_, nb_iterations, x, y, al
     n_theta = theta_
     costs = []
     for i in range(nb_iterations):
-        n_theta = compute_new_theta(x, y, n_theta, alpha_learningrate, alpha_lam_reg)
+        n_theta = compute_new_theta_lam_reg(x, y, n_theta, alpha_learningrate, alpha_lam_reg)
 
         costs.append(cost_function(x, y, logistic_hypothesis(n_theta), cross_entropy_loss(x, y))(n_theta))
     print(costs)
@@ -199,7 +209,8 @@ def gradient_descent_lam_reg(alpha_learningrate, theta_, nb_iterations, x, y, al
     plt.show()
     return n_theta
 
-new_theta = gradient_descent(0.1, np.array([-1, -2, 2]), 1000, x, y)
+
+new_theta = gradient_descent_lam_reg(0.1, np.array([-1, -2, 2]), 1000, x, y, 0.01)
 print(new_theta)
 
 
@@ -210,8 +221,8 @@ def decision_boundary(theta):
     x1_range = np.arange(-10, 10, 0.01)
     x2_range = np.arange(-10, 10, 0.01)
     x1_range, x2_range = np.meshgrid(x1_range, x2_range)
-    plt.scatter(r0[...,0], r0[...,1], c='b', marker='o', label="Klasse 0")
-    plt.scatter(r1[...,0], r1[...,1], c='r', marker='x', label="Klasse 1")
+    plt.scatter(r0[..., 0], r0[..., 1], c='b', marker='o', label="Klasse 0")
+    plt.scatter(r1[..., 0], r1[..., 1], c='r', marker='x', label="Klasse 1")
     plt.xlabel("x0")
     plt.ylabel("x1")
 
@@ -231,7 +242,7 @@ y_pred = h_pred(x)
 y_pred = np.around(y_pred)
 false_classifications = 0
 for i in range(y.size):
-    if(y_pred[i] != y[i]):
+    if (y_pred[i] != y[i]):
         false_classifications += 1
 
 print("False classifications: ", false_classifications)
