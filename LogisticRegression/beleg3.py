@@ -31,37 +31,6 @@ x = np.concatenate((r0,r1))
 y = np.zeros(len(r0)+len(r1))
 y[:len(r0),] = 1
 
-'''
-class DataPointGenerator:
-    features = None
-
-    def __init__(self, amount_of_points) -> None:
-        super().__init__()
-        x1 = np.random.uniform(0, 100, amount_of_points)
-        x2 = np.random.uniform(1, 20, amount_of_points)
-        self.features = np.concatenate([x1.reshape((-1, 1)), x2.reshape((-1, 1))],
-                                       axis=1)
-
-
-generator = DataPointGenerator(100)
-x = generator.features
-
-'''
-#Feature scaling
-def scalingFeature(feature):
-    '''
-    Scaling a given features to -1 to 1
-    :param feature: given features
-    :return: scaled features
-    '''
-    u = np.sum(feature) / feature.size
-    std = np.sqrt(np.abs(np.square(u) - np.square(feature)))
-    return (feature - u) / std
-#x[:, 0] = scalingFeature(x[:, 0])
-#x[:, 1] = scalingFeature(x[:, 1])
-
-
-
 # 1) Erstellen Sie eine Pythonfunktion die, die
 # logistische Funktion berechnet.
 # Stellen Sie diese im Bereich [-5, 5] graphisch dar.
@@ -100,8 +69,6 @@ def logistic_hypothesis(theta):
 
 theta = np.array([1.1, 2.0, -0.9])
 h = logistic_hypothesis(theta)
-#y = h(x)
-#y = np.around(y)
 print("Logistic function for: [1, 2]:", h(np.array([[1, 2]])))
 
 
@@ -227,4 +194,4 @@ for i in range(y.size):
     if(y_pred[i] != y[i]):
         false_classifications += 1
 
-print("False classifications: ", false_classifications)
+print("False classifications: ", (false_classifications / len(x)))

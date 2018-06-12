@@ -121,9 +121,9 @@ def cost_function_lam_reg(X, y, h, loss):
     return costs
 
 
-print("Costs for good theta", cost_function(x, y, h, loss)(theta))
+print("Costs for good theta", cost_function(x, y, h, loss)(np.array([-5, 1, 1.5])))
 
-print("Costs for bad theta", cost_function(x, y, h, loss)(np.array([1.4, 0.44, -0.55])))
+print("Costs for bad theta", cost_function(x, y, h, loss)(np.array([10, 0.44, -0.55])))
 
 
 # 5) Implementieren Sie das Gradientenabstiegsverfahren unter Benutzung der Kostenfunktion und der Hypothese.
@@ -204,14 +204,13 @@ def gradient_descent_lam_reg(alpha_learningrate, theta_, nb_iterations, x, y, al
         n_theta = compute_new_theta_lam_reg(x, y, n_theta, alpha_learningrate, alpha_lam_reg)
 
         costs.append(cost_function(x, y, logistic_hypothesis(n_theta), cross_entropy_loss(x, y))(n_theta))
-    print(costs)
     plt.plot(np.arange(0, nb_iterations), costs)
     plt.show()
     return n_theta
 
 
 new_theta = gradient_descent_lam_reg(0.1, np.array([-1, -2, 2]), 1000, x, y, 0.01)
-print(new_theta)
+print("New thetas", new_theta)
 
 
 # 6) Zeichen Sie die Entscheidungsebene in den Scatter-Plot der Daten
@@ -245,4 +244,4 @@ for i in range(y.size):
     if (y_pred[i] != y[i]):
         false_classifications += 1
 
-print("False classifications: ", false_classifications)
+print("False classifications: ", false_classifications / len(x))
