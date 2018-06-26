@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="20e39e3a-0eb1-4c1e-9346-377680e751a9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dec_tree/data/titanic.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dec_tree/data/titanic.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dec_tree/decision-trees-no-solution.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/dec_tree/decision-trees-no-solution.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dec_tree/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dec_tree/train.csv" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="beleg4.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BiasVariance/beleg4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
-              <caret line="128" column="10" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
+            <state relative-caret-position="1680">
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -72,20 +73,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="titanic.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dec_tree/data/titanic.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
       <file leaf-file-name="titanic.dot" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dec_tree/data/titanic.dot">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="tree.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sklearn/tree/tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="10380">
               <caret line="720" column="27" selection-start-line="720" selection-start-column="17" selection-end-line="720" selection-end-column="27" />
             </state>
           </provider>
@@ -94,8 +94,8 @@
       <file leaf-file-name="train.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dec_tree/train.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-start-column="12" selection-end-column="20" />
+            <state relative-caret-position="13365">
+              <caret line="891" column="56" selection-start-line="891" selection-start-column="56" selection-end-line="891" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -115,6 +115,7 @@
       <find>y</find>
       <find>criterion</find>
       <find>criterion=</find>
+      <find>359</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,7 +164,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +201,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -429,11 +430,18 @@
       <workItem from="1528792769723" duration="437000" />
       <workItem from="1528895157717" duration="3614000" />
       <workItem from="1529145356874" duration="3262000" />
+      <workItem from="1529248953386" duration="309000" />
+      <workItem from="1529311570140" duration="1000" />
+      <workItem from="1529397054161" duration="2535000" />
+      <workItem from="1529419670883" duration="3000" />
+      <workItem from="1529999546654" duration="2646000" />
+      <workItem from="1530002633509" duration="73000" />
+      <workItem from="1530002775676" duration="633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86558000" />
+    <option name="totallyTimeSpent" value="92758000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -446,6 +454,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
@@ -453,6 +462,7 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="11" sideWeight="0.05232558" side_tool="true" visible="true" weight="0.2020757" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -460,10 +470,10 @@
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29435897" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18498169" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2002442" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="SciView" order="10" sideWeight="0.95337623" visible="true" weight="0.2020757" />
+      <window_info anchor="right" id="SciView" order="10" sideWeight="0.9476744" visible="true" weight="0.2020757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -474,7 +484,6 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="11" sideWeight="0.046623792" side_tool="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="7" />
@@ -604,6 +613,20 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dec_tree/decision-trees-no-solution.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dec_tree/decision-trees-no-solution.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/matplotlib/axes/_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3630">
@@ -930,10 +953,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sklearn/tree/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10380">
+          <caret line="720" column="27" selection-start-line="720" selection-start-column="17" selection-end-line="720" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BiasVariance/beleg4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="128" column="10" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
+        <state relative-caret-position="1680">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -942,26 +972,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dec_tree/train.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="12" selection-end-column="20" />
+        <state relative-caret-position="13365">
+          <caret line="891" column="56" selection-start-line="891" selection-start-column="56" selection-end-line="891" selection-end-column="56" />
         </state>
       </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sklearn/tree/tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="720" column="27" selection-start-line="720" selection-start-column="17" selection-end-line="720" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dec_tree/titanic.dot">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/dec_tree/data/titanic.dot">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dec_tree/data/titanic.png">
-      <provider selected="true" editor-type-id="images" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dec_tree/decision-trees-no-solution.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
